@@ -61,11 +61,7 @@ const exchangeLink = document.querySelector('li.exchange-link')
 if (exchangeLink) {
   exchangeLink.style.cursor = 'pointer'
   exchangeLink.addEventListener('click', () => {
-<<<<<<< HEAD
-    window.location.href = './side-bar/exchange.html'
-=======
     window.location.href = './data/side-bar/exchange.html'
->>>>>>> 01aba09811a9ded0b6b8393413e53bb6f127ac27
   })
 }
 
@@ -73,11 +69,7 @@ const cardsLink = document.querySelector('li.cards-link')
 if (cardsLink) {
   cardsLink.style.cursor = 'pointer'
   cardsLink.addEventListener('click', () => {
-<<<<<<< HEAD
-    window.location.href = './side-bar/cards.html'
-=======
     window.location.href = './data/side-bar/cards.html'
->>>>>>> 01aba09811a9ded0b6b8393413e53bb6f127ac27
   })
 }
 

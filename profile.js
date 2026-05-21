@@ -22,16 +22,6 @@ if (!userInfo) {
   if (profileEmail) {
     profileEmail.textContent = userInfo.email || ''
   }
-<<<<<<< HEAD
-
-  // Display favorite flowers
-  const favoriteFlowersDisplay = document.getElementById('favoriteFlowersDisplay')
-  if (favoriteFlowersDisplay) {
-    const savedFlowers = localStorage.getItem('favoriteFlowers') || ''
-    favoriteFlowersDisplay.textContent = savedFlowers || 'Добавьте любимые цветы в профиль'
-  }
-=======
->>>>>>> 01aba09811a9ded0b6b8393413e53bb6f127ac27
 }
 
 if (logoutBtn) {
@@ -301,15 +291,6 @@ if (editForm) {
     if (profileName) {
       profileName.textContent = `Привет ${newUsername}!`
     }
-<<<<<<< HEAD
-
-    // Update favorite flowers display
-    const favoriteFlowersDisplay = document.getElementById('favoriteFlowersDisplay')
-    if (favoriteFlowersDisplay) {
-      favoriteFlowersDisplay.textContent = newFlowers || 'Добавьте любимые цветы в профиль'
-    }
-=======
->>>>>>> 01aba09811a9ded0b6b8393413e53bb6f127ac27
     
     closeEditModal()
   })

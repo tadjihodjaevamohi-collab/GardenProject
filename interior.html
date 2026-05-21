@@ -1,306 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Интерьер</title>
-  <link rel="stylesheet" href="./profile.css">
-  <style>
-    /* ANIMATIONS */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes slideInLeft {
-      from {
-        opacity: 0;
-        transform: translateX(-30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
-    @keyframes slideInRight {
-      from {
-        opacity: 0;
-        transform: translateX(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
-    @keyframes bounce {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-8px);
-      }
-    }
-
-    .room-builder {
-      display: flex;
-      flex-direction: column;
-      gap: 22px;
-      margin-top: 28px;
-      animation: fadeInUp 0.8s ease both;
-    }
-
-    .room-builder__content {
-      display: grid;
-      grid-template-columns: minmax(280px, 340px) minmax(0, 1fr);
-      gap: 24px;
-      animation: fadeInUp 0.8s ease 0.1s both;
-    }
-
-    .room-canvas {
-      position: relative;
-      min-height: 760px;
-      border-radius: 30px;
-      background-size: cover;
-      background-position: center right;
-      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.18);
-      overflow: hidden;
-      background-color: #20262f;
-      transition: all 0.3s ease;
-      animation: slideInRight 0.7s ease both;
-    }
-
-    .room-canvas:hover {
-      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.25);
-    }
-
-    .room-canvas__hint {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-      color: #dfe4e7;
-      text-align: center;
-      font-size: 18px;
-      line-height: 1.5;
-      pointer-events: none;
-      z-index: 1;
-      background: rgba(0, 0, 0, 0.2);
-    }
-
-    .room-canvas::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.06), transparent 35%);
-      pointer-events: none;
-    }
-
-    .plant-wrapper {
-      position: absolute;
-      top: 68%;
-      left: 72%;
-      width: 180px;
-      transform: translate(-50%, -50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      cursor: grab;
-      z-index: 2;
-      touch-action: none;
-      animation: bounce 1.5s ease-in-out infinite;
-      transition: all 0.2s ease;
-    }
-
-    .plant-wrapper:hover {
-      transform: translate(-50%, -50%) scale(1.05);
-      filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
-    }
-
-    .plant-wrapper.dragging {
-      cursor: grabbing;
-      animation: none;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-    }
-
-    .plant-wrapper img {
-      width: 100%;
-      user-select: none;
-      pointer-events: none;
-      display: block;
-      transition: filter 0.3s ease;
-    }
-
-    .pot-base {
-      width: 64%;
-      height: 32px;
-      background: #8b5a2b;
-      border-radius: 0 0 50% 50%;
-      margin-top: -12px;
-      box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.16);
-    }
-
-    .room-controls {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 24px;
-      padding: 24px;
-      min-height: 260px;
-      color: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      animation: slideInLeft 0.7s ease both;
-      transition: all 0.3s ease;
-    }
-
-    .room-controls:hover {
-      background: rgba(255, 255, 255, 0.12);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-    }
-
-    .room-controls h3,
-    .room-controls p {
-      margin: 0;
-    }
-
-    .room-controls label {
-      display: block;
-      margin-bottom: 10px;
-      font-weight: 600;
-    }
-
-    .room-controls input[type=range] {
-      width: 100%;
-    }
-
-    .color-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .color-btn {
-      padding: 10px 14px;
-      border-radius: 14px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      background: rgba(255, 255, 255, 0.08);
-      color: #fff;
-      cursor: pointer;
-      transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
-      animation: fadeInUp 0.6s ease both;
-    }
-
-    .color-btn:nth-child(1) { animation-delay: 0.1s; }
-    .color-btn:nth-child(2) { animation-delay: 0.15s; }
-    .color-btn:nth-child(3) { animation-delay: 0.2s; }
-    .color-btn:nth-child(4) { animation-delay: 0.25s; }
-
-    .color-btn:hover,
-    .color-btn.active {
-      transform: translateY(-2px);
-      background: rgba(255, 255, 255, 0.2);
-      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
-    }
-
-    .control-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .control-actions button {
-      flex: 1;
-      min-width: 130px;
-      border: none;
-      border-radius: 14px;
-      padding: 12px 16px;
-      background: rgba(255, 255, 255, 0.15);
-      color: white;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      animation: fadeInUp 0.6s ease both;
-      font-weight: 500;
-    }
-
-    .control-actions button:nth-child(1) { animation-delay: 0.2s; }
-    .control-actions button:nth-child(2) { animation-delay: 0.25s; }
-
-    .control-actions button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-    }
-
-    .control-actions button:active {
-      transform: translateY(-1px);
-    }
-
-    .control-actions button.remove {
-      background: #c94b4b;
-    }
-
-    .control-actions button.remove:hover {
-      background: #b83f3f;
-    }
-
-    .control-actions button.restore {
-      background: #4a9d4a;
-    }
-
-    .control-actions button.restore:hover {
-      background: #3d8c3d;
-    }
-
-    .room-builder__header {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .room-builder__header h2 {
-      font-size: 28px;
-    }
-
-    .room-builder__header p {
-      color: #dfe4e7;
-    }
-  </style>
-</head>
-
-=======
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Интерьер</title>
     <link rel="stylesheet" href="./profile.css">
 </head>
->>>>>>> 01aba09811a9ded0b6b8393413e53bb6f127ac27
 <body>
   <div class="main-container">
     <div class="container">
       <div class="sidebar">
         <div class="logo">Greenhouse</div>
         <ul class="menu">
-<<<<<<< HEAD
-          <li class="index-link active" onclick="window.location.href='./index.html'" style="cursor: pointer;">
-            <img src="./img/leaf-icon.png" alt="">Подборки
-          </li>
-          <li onclick="window.location.href='./side-bar/exchange.html'" style="cursor: pointer;">
-            <img src="./img/location-icon.png" alt=""> Обмен растений
-          </li>
-          <li onclick="window.location.href='./side-bar/cards.html'" style="cursor: pointer;">
-=======
           <li class="index-link active">
             <img src="./img/leaf-icon.png" alt="">Подборки
           </li>
@@ -308,7 +19,6 @@
             <img src="./img/location-icon.png" alt=""> Обмен растений
           </li>
           <li>
->>>>>>> 01aba09811a9ded0b6b8393413e53bb6f127ac27
             <img src="./img/head-icon.png" alt=""> ДОМАШНИЕ РАСТЕНИЯ
           </li>
           <li>
@@ -355,60 +65,13 @@
               <div class="nav-ul__icons">
                 <img src="./img/bag-icon.png" alt="">
                 <div>
-<<<<<<< HEAD
-                  <img class="pfp" src="./img/person-icon.png" alt="" onclick="window.location.href='./profile.html'" style="cursor:pointer;">
-=======
                   <img class="pfp" src="./img/person-icon.png" alt="">
->>>>>>> 01aba09811a9ded0b6b8393413e53bb6f127ac27
                 </div>
               </div>
             </li>
           </ul>
         </nav>
         <div class="main">
-<<<<<<< HEAD
-          <section class="room-builder">
-            <div class="room-builder__header">
-              <h2>Оформление комнаты</h2>
-              <p>Перетащите растение по фотографии комнаты, измените его размер, цвет горшка или удалите.</p>
-            </div>
-            <div class="room-builder__content">
-              <div class="room-controls">
-                <div>
-                  <h3>Параметры растения</h3>
-                  <p>Растение можно перемещать только внутри фона комнаты.</p>
-                </div>
-                <div>
-                  <label for="plantSize">Размер растения</label>
-                  <input id="plantSize" type="range" min="120" max="320" value="220">
-                </div>
-                <div>
-                  <label>Цвет горшка</label>
-                  <div class="color-buttons">
-                    <button type="button" class="color-btn active" data-color="#8b5a2b">Коричневый</button>
-                    <button type="button" class="color-btn" data-color="#6b8e23">Оливковый</button>
-                    <button type="button" class="color-btn" data-color="#4b6ea0">Синий</button>
-                    <button type="button" class="color-btn" data-color="#9d6d3c">Терракотовый</button>
-                  </div>
-                </div>
-                <div class="control-actions">
-                  <button id="removeBgBtn" type="button">AI удалить фон</button>
-                  <button id="togglePotBtn" type="button">Убрать горшок</button>
-                  <button id="removePlantBtn" class="remove" type="button">Удалить растение</button>
-                  <button id="restorePlantBtn" class="restore" type="button" style="display:none;">Восстановить
-                    растение</button>
-                </div>
-              </div>
-              <div class="room-canvas" id="roomCanvas">
-                <div class="room-canvas__hint" id="roomHint"></div>
-                <div class="plant-wrapper" id="plantWrapper">
-                  <img id="plantImage" src="./img/product1.png" alt="Plant" draggable="false">
-                  <div class="pot-base" id="potBase"></div>
-                </div>
-              </div>
-            </div>
-          </section>
-=======
           <section class="profile">
             <div>
               <h1>Интерьер вашего сада</h1>
@@ -426,16 +89,12 @@
               <button id="backButton">Вернуться</button>
             </div>
           </div>
->>>>>>> 01aba09811a9ded0b6b8393413e53bb6f127ac27
         </div>
       </div>
     </div>
   </div>
 
   <script>
-<<<<<<< HEAD
-    const indexLink = document.querySelector('li.index-link')
-=======
     const backButton = document.getElementById('backButton')
     const indexLink = document.querySelector('li.index-link')
     const previewContainer = document.getElementById('interiorPreview')
@@ -446,7 +105,6 @@
       })
     }
 
->>>>>>> 01aba09811a9ded0b6b8393413e53bb6f127ac27
     if (indexLink) {
       indexLink.style.cursor = 'pointer'
       indexLink.addEventListener('click', () => {
@@ -454,244 +112,6 @@
       })
     }
 
-<<<<<<< HEAD
-    const box1Image = localStorage.getItem('box1Image')
-    const box2Image = localStorage.getItem('box2Image')
-
-
-    const roomCanvas = document.getElementById('roomCanvas')
-    const plantWrapper = document.getElementById('plantWrapper')
-    const plantImage = document.getElementById('plantImage')
-    const plantSize = document.getElementById('plantSize')
-    const potBase = document.getElementById('potBase')
-    const colorButtons = document.querySelectorAll('.color-btn')
-    const removePlantBtn = document.getElementById('removePlantBtn')
-    const restorePlantBtn = document.getElementById('restorePlantBtn')
-    const removeBgBtn = document.getElementById('removeBgBtn')
-    const togglePotBtn = document.getElementById('togglePotBtn')
-
-    const roomHint = document.getElementById('roomHint')
-    const isPngImage = (src) => /(?:^data:image\/png|\.png(?:\?|$))/i.test(src || '')
-
-    const updateRoomSources = () => {
-      if (roomCanvas) {
-        if (box2Image) {
-          roomCanvas.style.backgroundImage = `url(${box2Image})`
-          roomCanvas.style.backgroundColor = ''
-        } else {
-          roomCanvas.style.backgroundImage = 'none'
-          roomCanvas.style.backgroundColor = '#20262f'
-        }
-      }
-
-      if (plantImage && plantWrapper) {
-        if (box1Image) {
-          plantImage.src = box1Image
-          plantWrapper.style.display = 'flex'
-        } else {
-          plantWrapper.style.display = 'none'
-        }
-      }
-
-      if (roomHint) {
-        if (!box1Image && !box2Image) {
-          roomHint.textContent = 'Загрузите фото растения и уголка на странице профиля, чтобы они появились здесь.'
-          roomHint.style.display = 'flex'
-        } else if (!box1Image) {
-          roomHint.textContent = 'Загрузите фото растения на странице профиля, чтобы оно появилось в комнате.'
-          roomHint.style.display = 'flex'
-        } else if (!box2Image) {
-          roomHint.textContent = 'Загрузите фото уголка на странице профиля, чтобы увидеть фон комнаты.'
-          roomHint.style.display = 'flex'
-        } else {
-          roomHint.textContent = ''
-          roomHint.style.display = 'none'
-        }
-      }
-
-      if (removeBgBtn) {
-        removeBgBtn.disabled = !box1Image || !isPngImage(plantImage?.src)
-      }
-
-      if (togglePotBtn) {
-        try {
-          const potHidden = localStorage.getItem('potHidden') === '1'
-          if (potHidden) {
-            if (potBase) potBase.style.display = 'none'
-            togglePotBtn.textContent = 'Восстановить горшок'
-          } else {
-            if (potBase) potBase.style.display = ''
-            togglePotBtn.textContent = 'Убрать горшок'
-          }
-        } catch (e) {
-          console.warn('localStorage not available for pot state', e)
-        }
-      }
-    }
-
-    updateRoomSources()
-
-    const removePngBackground = (imageElement) => {
-      if (!imageElement) return
-      const src = imageElement.src
-      if (!isPngImage(src)) return
-
-      const img = new Image()
-      img.crossOrigin = 'Anonymous'
-      img.onload = () => {
-        const canvas = document.createElement('canvas')
-        canvas.width = img.width
-        canvas.height = img.height
-        const ctx = canvas.getContext('2d')
-        ctx.drawImage(img, 0, 0)
-        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height)
-        const data = imageData.data
-
-        const borderSamples = []
-        const samplePixel = (x, y) => {
-          const index = (y * canvas.width + x) * 4
-          return [data[index], data[index + 1], data[index + 2]]
-        }
-
-        for (let x = 0; x < canvas.width; x += Math.max(1, Math.floor(canvas.width / 30))) {
-          borderSamples.push(samplePixel(x, 0))
-          borderSamples.push(samplePixel(x, canvas.height - 1))
-        }
-        for (let y = 0; y < canvas.height; y += Math.max(1, Math.floor(canvas.height / 30))) {
-          borderSamples.push(samplePixel(0, y))
-          borderSamples.push(samplePixel(canvas.width - 1, y))
-        }
-
-        const averageColor = borderSamples.reduce(
-          (acc, [r, g, b]) => [acc[0] + r, acc[1] + g, acc[2] + b],
-          [0, 0, 0]
-        ).map((value) => Math.round(value / borderSamples.length))
-
-        const colorDistance = (r, g, b, target) => {
-          return Math.sqrt((r - target[0]) ** 2 + (g - target[1]) ** 2 + (b - target[2]) ** 2)
-        }
-
-        const threshold = 65
-
-        for (let i = 0; i < data.length; i += 4) {
-          const r = data[i]
-          const g = data[i + 1]
-          const b = data[i + 2]
-          const a = data[i + 3]
-          const dist = colorDistance(r, g, b, averageColor)
-          if (a < 20 || dist < threshold) {
-            data[i + 3] = 0
-          }
-        }
-
-        ctx.putImageData(imageData, 0, 0)
-        imageElement.src = canvas.toDataURL('image/png')
-      }
-      img.onerror = () => {
-        console.warn('Не удалось обработать PNG изображение для удаления фона.')
-      }
-      img.src = src
-    }
-
-    let isDragging = false
-    let dragOffsetX = 0
-    let dragOffsetY = 0
-
-    const clamp = (value, min, max) => Math.min(Math.max(value, min), max)
-
-    const updatePlantPosition = (clientX, clientY) => {
-      if (!roomCanvas || !plantWrapper) return
-      const canvasRect = roomCanvas.getBoundingClientRect()
-      const wrapperRect = plantWrapper.getBoundingClientRect()
-      const x = clamp(clientX - canvasRect.left - dragOffsetX, 0, canvasRect.width - wrapperRect.width)
-      const y = clamp(clientY - canvasRect.top - dragOffsetY, 0, canvasRect.height - wrapperRect.height)
-      plantWrapper.style.left = `${x}px`
-      plantWrapper.style.top = `${y}px`
-      plantWrapper.style.transform = 'translate(0, 0)'
-    }
-
-    if (plantWrapper) {
-      plantWrapper.addEventListener('pointerdown', (event) => {
-        isDragging = true
-        plantWrapper.classList.add('dragging')
-        const wrapperRect = plantWrapper.getBoundingClientRect()
-        dragOffsetX = event.clientX - wrapperRect.left
-        dragOffsetY = event.clientY - wrapperRect.top
-        plantWrapper.setPointerCapture(event.pointerId)
-      })
-
-      plantWrapper.addEventListener('pointerup', () => {
-        isDragging = false
-        plantWrapper.classList.remove('dragging')
-      })
-
-      document.addEventListener('pointermove', (event) => {
-        if (!isDragging) return
-        updatePlantPosition(event.clientX, event.clientY)
-      })
-
-      document.addEventListener('pointerup', () => {
-        isDragging = false
-        if (plantWrapper) plantWrapper.classList.remove('dragging')
-      })
-    }
-
-    if (plantSize) {
-      plantSize.addEventListener('input', () => {
-        plantWrapper.style.width = `${plantSize.value}px`
-      })
-    }
-
-    if (colorButtons.length) {
-      colorButtons.forEach((button) => {
-        button.addEventListener('click', () => {
-          colorButtons.forEach((btn) => btn.classList.remove('active'))
-          button.classList.add('active')
-          potBase.style.background = button.dataset.color
-        })
-      })
-    }
-
-    if (removePlantBtn && restorePlantBtn) {
-      removePlantBtn.addEventListener('click', () => {
-        plantWrapper.style.display = 'none'
-        removePlantBtn.style.display = 'none'
-        restorePlantBtn.style.display = 'inline-block'
-      })
-
-      if (togglePotBtn) {
-        togglePotBtn.addEventListener('click', () => {
-          if (!potBase) return
-          const hidden = window.getComputedStyle(potBase).display === 'none'
-          if (hidden) {
-            potBase.style.display = ''
-            togglePotBtn.textContent = 'Убрать горшок'
-            try { localStorage.removeItem('potHidden') } catch(e) { /* ignore */ }
-          } else {
-            potBase.style.display = 'none'
-            togglePotBtn.textContent = 'Восстановить горшок'
-            try { localStorage.setItem('potHidden', '1') } catch(e) { /* ignore */ }
-          }
-        })
-      }
-
-      if (removeBgBtn) {
-        removeBgBtn.addEventListener('click', () => {
-          removePngBackground(plantImage)
-        })
-      }
-
-      restorePlantBtn.addEventListener('click', () => {
-        plantWrapper.style.display = 'flex'
-        restorePlantBtn.style.display = 'none'
-        removePlantBtn.style.display = 'inline-block'
-      })
-    }
-  </script>
-</body>
-
-</html>
-=======
     const showImageCard = (src, label) => {
       const card = document.createElement('div')
       card.style.minHeight = '180px'
@@ -722,4 +142,3 @@
   </script>
 </body>
 </html>
->>>>>>> 01aba09811a9ded0b6b8393413e53bb6f127ac27
