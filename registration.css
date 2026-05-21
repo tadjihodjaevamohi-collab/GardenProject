@@ -1,0 +1,204 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.error-line{
+    font-size: 14px;
+    font-weight: 600;
+    color: #e06464;
+    margin: 10px 0;
+    min-height: 20px;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #f3e8e2, #cfe3d5, #e6c3c7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CONTAINER */
+.auth-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* CARD */
+.auth-card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  padding: 40px;
+  border-radius: 20px;
+  width: 400px; /* было меньше → теперь 400px */
+  max-width: 90%; /* чтобы на маленьких экранах не ломалось */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* TEXT */
+.auth-card h2 {
+  color: #2e4d3c;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #6b7d73;
+  margin-bottom: 25px;
+}
+
+/* INPUTS */
+.input-group,
+.language {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+label {
+  font-size: 12px;
+  color: #4f5f57;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 5px;
+  background: #f7f7f5;
+}
+
+/* BUTTON */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #6fae7c, #3f7d5c);
+  color: white;
+  font-weight: bold;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* HINT */
+.hint {
+  margin-top: 15px;
+  font-size: 12px;
+  color: #a08b8f;
+  cursor: pointer;
+}
+
+/* REGISTER BUTTON */
+.register-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  margin-top: 10px;
+  border: 2px solid #6fae7c;
+  background: transparent;
+  color: #3f7d5c;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.register-btn:hover {
+  background: #e6c3c7;
+  border-color: #e6c3c7;
+  color: #2e4d3c;
+}
+
+/* PASSWORD */
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  padding-right: 40px;
+}
+
+#togglePassword {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+#togglePassword:hover {
+  opacity: 1;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px; /* увеличено */
+  border-radius: 12px;
+  font-size: 15px;
+  background: #f7f7f5;
+  margin-top: 6px;
+}
+
+/* REGISTER BLOCK */
+.register-extra {
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.4s ease;
+}
+
+.register-extra.active {
+  max-height: 200px;
+  margin-top: 10px;
+}
+
+/* FLAGS */
+.flags {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.flag {
+  font-size: 22px;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.flag:hover {
+  background: #e6c3c7;
+}
+
+.flag.active {
+  background: #6fae7c;
+}
+
+/* PASSWORD */
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  padding-right: 45px;
+}
+
+#togglePassword {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}

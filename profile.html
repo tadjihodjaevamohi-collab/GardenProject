@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="./profile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mynerve&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Just+Me+Again+Down+Here&family=Mynerve&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="container">
+            <div class="sidebar">
+                <div class="logo">Greenhouse</div>
+
+                <ul class="menu">
+                    <li class="index-link active" data-category="plants">
+                        <img src="./img/leaf-icon.png" alt="">Подборки
+                    </li>
+<<<<<<< HEAD
+                    <li onclick="window.location.href='./side-bar/cards.html'" style="cursor: pointer;">
+=======
+                    <li>
+                        <img src="./img/location-icon.png" alt=""> Обмен растений
+                    </li>
+                    <li>
+>>>>>>> 01aba09811a9ded0b6b8393413e53bb6f127ac27
+                        <img src="./img/head-icon.png" alt=""> ДОМАШНИЕ РАСТЕНИЯ
+                    </li>
+                    <li>
+                        <img src="./img/tools-icon.png" alt=""> СРЕДСТВА ДЛЯ УХОДА
+                    </li>
+                    <li>
+                        <img src="./img/flower-icon.png" alt=""> СЕМИНАРЫ
+                    </li>
+                    <li>
+                        <img src="./img/person-icon-consult.png" alt=""> консультации
+                    </li>
+                    <li>
+                        <img src="./img/money-icon.png" alt=""> спонсирование
+                    </li>
+                    <li>
+                        <img src="./img/book-icon.png" alt=""> ЛИЧНЫЙ ЖУРНАЛ
+                    </li>
+                </ul>
+                <div class="menu-2">
+                    <button class="catalog-btn">Смотреть каталог</button>
+                    <ul class="menu-2_ul">
+                        <li>
+                            <img src="./img/tree-icon.png" alt=""> УСТОЙЧИВОЕ РАЗВИТИЕ
+                        </li>
+                        <li>
+                            <img src="./img/mark-icon.png" alt=""> ПОДДЕРЖКА
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- TOPBAR -->
+
+            <div class="right-side">
+
+                <nav>
+                    <ul>
+                        <li>
+                            <div class="nav-ul__search">
+                                <img src="./img/search-icon.png" alt="">
+                                <input type="text" placeholder="Поиск...">
+                            </div>
+                        </li>
+                        <li>
+                            <h3 class="title">Customize Your Garden</h3>
+                        </li>
+                        <li>
+                            <div class="nav-ul__icons">
+                                <img src="./img/bag-icon.png" alt="">
+                                <div>
+                                    <img class="pfp" src="./img/person-icon.png" alt="">
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="main">
+                    <!-- PROFILE -->
+                    <section class="profile">
+                        <div class="avatar" id="avatarContainer">
+                            <img id="avatarImage" src="./img/Ellipse 2.png" alt="Profile picture">
+                            <div class="avatar-overlay"><img src="./img/photo.png" alt="">поменять аву</div>
+                        </div>
+                        <input type="file" id="avatarInput" accept="image/*" hidden>
+
+                        <div class="info">
+                            <h1 id="profileName">Привет, друг!</h1>
+                            <p id="profileEmail"></p>
+                            <span class="tag">Любимые растения</span>
+<<<<<<< HEAD
+                            <p id="favoriteFlowersDisplay" class="favorite-flowers-text"></p>
+=======
+>>>>>>> 01aba09811a9ded0b6b8393413e53bb6f127ac27
+
+                            <div class="buttons">
+                                <button class="edit">Edit Profile</button>
+                                <button class="logout">Log Out</button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- CARDS -->
+                    <div class="cards">
+
+                        <div class="card1">
+                            <div class="h3">
+                                <img src="./img/img-flower.png" alt="">
+                                <h3>Обменённые Растения</h3>
+                            </div>
+                            <p class="empty">Результатов не найдено</p>
+                        </div>
+
+                        <div class="card-tips">
+                            <h3>Полезные советы</h3>
+                            <div class="advice-list">
+                                <p class="advice-item">Загружается совет...</p>
+                                <p class="advice-item">Загружается совет...</p>
+                                <p class="advice-item">Загружается совет...</p>
+                            </div>
+                            <button id="adviceButton">Еще советы</button>
+                        </div>
+
+                    </div>
+
+                    <!-- UPLOAD -->
+                    <div class="upload">
+                        
+                        <div class="upload-boxes">
+                            <h3>Ваш персональный уголок растений</h3>
+                            <div class="box1" id="box1">
+                                <div class="upload-placeholder">
+                                    <img src="./img/upload-icon.png" alt="">
+                                    <span>Загрузите фото растения</span>
+                                </div>
+                                <div class="box-overlay">
+                                    <button class="remove-image">Удалить</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box2" id="box2">
+                            <div class="upload-placeholder">
+                                <img src="./img/upload-icon.png" alt="">
+                                <span>Загрузите фото уголка</span>
+                            </div>
+                            <div class="box-overlay">
+                                <button class="remove-image">Удалить</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="viewInteriorButton" class="interior-button" style="display:none;">Посмотреть интерьер</button>
+                    <input type="file" id="box1Input" accept="image/*" hidden>
+                    <input type="file" id="box2Input" accept="image/*" hidden>
+                </div>
+            </div>
+        </div>
+
+        <!-- EDIT MODAL -->
+        <div id="editModal" class="modal" style="display:none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Edit Profile</h2>
+                    <button id="closeModal" class="close-btn">&times;</button>
+                </div>
+                <form id="editForm">
+                    <div class="form-group">
+                        <label for="usernameInput">Username:</label>
+                        <input type="text" id="usernameInput" placeholder="Enter your username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="favoriteFlowers">Favorite Flowers:</label>
+                        <input type="text" id="favoriteFlowers" placeholder="e.g., Rose, Tulip, Sunflower">
+                    </div>
+                    <div class="modal-buttons">
+                        <button type="submit" class="save-btn">Save</button>
+                        <button type="button" id="cancelBtn" class="cancel-btn">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="./profile.js"></script>
+</body>
+
+</html>

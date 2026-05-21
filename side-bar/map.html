@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карта филиалов - Greenhouse</title>
+    <link rel="stylesheet" href="./map.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+    <div class="map-container">
+        <div class="map-sidebar">
+            <div class="sidebar-header">
+                <h2>Наши филиалы</h2>
+                <a href="./exchange.html" class="back-btn">Назад</a>
+            </div>
+            <div class="branches-list">
+                <div class="branch-item active" data-lat="41.2995" data-lng="69.2401">
+                    <h3>Филиал "Центр"</h3>
+                    <p>ул. Амира Темура, 108</p>
+                    <p class="city">Ташкент, 100084</p>
+                </div>
+                <div class="branch-item" data-lat="41.3034" data-lng="69.1833">
+                    <h3>Филиал "Чилэнзар"</h3>
+                    <p>ул. Узбекская, 45</p>
+                    <p class="city">Ташкент, 100115</p>
+                </div>
+                <div class="branch-item" data-lat="41.3193" data-lng="69.2405">
+                    <h3>Филиал "Мирзо Улугбек"</h3>
+                    <p>пр. Навои, 56</p>
+                    <p class="city">Ташкент, 100011</p>
+                </div>
+            </div>
+        </div>
+        <div class="map-main">
+            <div id="map"></div>
+            <div class="map-info">
+                <div class="info-content">
+                    <h3 id="branchName">Филиал "Центр"</h3>
+                    <p id="branchAddress">ул. Амира Темура, 108</p>
+                    <p id="branchCity">Ташкент, 100084</p>
+                    <button class="route-btn">Построить маршрут</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        let map;
+        let markers = [];
+        let currentMarker = null;
+
+        const branches = [
+            { name: 'Филиал "Центр"', address: 'ул. Амира Темура, 108', city: 'Ташкент, 100084', lat: 41.2995, lng: 69.2401 },
+            { name: 'Филиал "Чилэнзар"', address: 'ул. Узбекская, 45', city: 'Ташкент, 100115', lat: 41.3034, lng: 69.1833 },
+            { name: 'Филиал "Мирзо Улугбек"', address: 'пр. Навои, 56', city: 'Ташкент, 100011', lat: 41.3193, lng: 69.2405 }
+        ];
+
+        function initMap() {
+            const tashkentCenter = [41.2995, 69.2401];
+            map = L.map('map').setView(tashkentCenter, 12);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            branches.forEach((branch, index) => {
+                const marker = L.marker([branch.lat, branch.lng]).addTo(map);
+                marker.on('click', () => selectBranch(index));
+                markers.push(marker);
+            });
+
+            selectBranch(0);
+        }
+
+        function selectBranch(index) {
+            const branch = branches[index];
+            document.getElementById('branchName').textContent = branch.name;
+            document.getElementById('branchAddress').textContent = branch.address;
+            document.getElementById('branchCity').textContent = branch.city;
+
+            if (currentMarker) {
+                currentMarker.setIcon(new L.Icon.Default());
+            }
+
+            currentMarker = markers[index];
+            currentMarker.setIcon(new L.Icon({
+                iconUrl: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
+                iconSize: [25, 41],
+                iconAnchor: [12, 41],
+                popupAnchor: [1, -34]
+            }));
+
+            map.setView([branch.lat, branch.lng], 15);
+            document.querySelectorAll('.branch-item').forEach((el, idx) => {
+                el.classList.toggle('active', idx === index);
+            });
+
+            const routeButton = document.querySelector('.route-btn');
+            routeButton.onclick = () => {
+                window.open(`https://www.google.com/maps/dir/?api=1&destination=${branch.lat},${branch.lng}`, '_blank');
+            };
+        }
+
+        document.querySelectorAll('.branch-item').forEach((item, index) => {
+            item.addEventListener('click', () => {
+                document.querySelectorAll('.branch-item').forEach(el => el.classList.remove('active'));
+                item.classList.add('active');
+                selectBranch(index);
+            });
+        });
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initMap);
+        } else {
+            initMap();
+        }
+    </script>
+</body>
+</html>

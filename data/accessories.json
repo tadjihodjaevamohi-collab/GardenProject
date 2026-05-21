@@ -1,0 +1,32 @@
+[
+  {
+    "productId": 1,
+    "productImage": "./img/pot1.png",
+    "productName": "Premium Ceramic Pot",
+    "productInfo": "8 INCH CERAMIC PLANTER",
+    "productPrice": "$24.00",
+    "productDiscount": "$30.00",
+    "productAmount": "1",
+    "productCart": "Add to Cart"
+  },
+  {
+    "productId": 2,
+    "productImage": "./img/pot2.png",
+    "productName": "Marble Plant Stand",
+    "productInfo": "ELEGANT DISPLAY STAND",
+    "productPrice": "$45.00",
+    "productDiscount": "",
+    "productAmount": "1",
+    "productCart": "Add to Cart"
+  },
+  {
+    "productId": 3,
+    "productImage": "./img/spray1.png",
+    "productName": "Misting Spray Bottle",
+    "productInfo": "STAINLESS STEEL NOZZLE",
+    "productPrice": "$12.50",
+    "productDiscount": "$15.00",
+    "productAmount": "1",
+    "productCart": "Add to Cart"
+  }
+]

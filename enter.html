@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Вход</title>
+    <link rel="stylesheet" href="enter.css">
+</head>
+
+<body>
+
+    <div class="auth-container">
+
+        <div class="auth-card">
+
+            <h2>Greenhouse</h2>
+            <p class="subtitle">Добро пожаловать 🌿</p>
+
+            
+            <!-- EMAIL / USERNAME -->
+            <div class="input-group">
+                <label>Никнейм</label>
+                <input type="text" id="userName" placeholder="Введите ник">
+            </div>
+
+            <!-- PASSWORD -->
+            <div class="input-group">
+                <label>Пароль</label>
+                <div class="password-wrapper">
+                    <input type="password" id="password" placeholder="Введите пароль">
+                    <span id="togglePassword">👁️</span>
+                </div>
+            </div>
+            
+            <div class="error-line">
+
+            </div>
+            
+            <!-- BUTTONS -->
+            <button class="login-btn">Войти</button>
+            <button class="register-btn">Регистрация</button>
+
+            <p class="hint">Забыли пароль?</p>
+
+        </div>
+
+    </div>
+
+    <script src="enter.js"></script>
+
+</body>
+
+</html>

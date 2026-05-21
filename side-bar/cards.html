@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mynerve&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./cards.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mynerve&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo">Greenhouse</div>
+
+        <ul class="menu">
+            <li class="active" data-category="plants">
+                <img src="./img/leaf-icon.png" alt="">Подборки
+            </li>
+            <li class="exchange-link" style="cursor: pointer;">
+                <img src="./img/location-icon.png" alt=""> Обмен растений
+            </li>
+            <li class="cards-link" onclick="window.location.href='./cards.html'" style="cursor: pointer;">
+                <img src="./img/head-icon.png" alt=""> ДОМАШНИЕ РАСТЕНИЯ
+            </li>
+            <li>
+                <img src="./img/tools-icon.png" alt=""> СРЕДСТВА ДЛЯ УХОДА
+            </li>
+            <li>
+                <img src="./img/flower-icon.png" alt=""> СЕМИНАРЫ
+            </li>
+            <li>
+                <img src="./img/person-icon-consult.png" alt=""> консультации
+            </li>
+            <li>
+                <img src="./img/money-icon.png" alt=""> спонсирование
+            </li>
+            <li onclick="window.location.href='./interior.html'" style="cursor: pointer;">
+                <img src="./img/book-icon.png" alt=""> ЛИЧНЫЙ ЖУРНАЛ
+            </li>
+        </ul>
+        <div class="menu-2">
+            <button class="catalog-btn">Смотреть каталог</button>
+            <ul class="menu-2_ul">
+                <li>
+                    <img src="./img/tree-icon.png" alt=""> УСТОЙЧИВОЕ РАЗВИТИЕ
+                </li>
+                <li>
+                    <img src="./img/mark-icon.png" alt=""> ПОДДЕРЖКА
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="right">
+
+        <nav>
+            <ul>
+                <li>
+                    <div class="nav-ul__search">
+                        <img src="./img/search-icon.png" alt="">
+                        <input type="text" placeholder="Поиск...">
+                    </div>
+                </li>
+                <li>
+                    <h3 class="title">Customize Your Garden</h3>
+                </li>
+                <li>
+                    <div class="nav-ul__icons">
+                        <img src="./img/bag-icon.png" alt="">
+                        <img class="profile" src="./img/person-icon.png" alt="">
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <!-- PRODUCTS SECTION -->
+        <section class="productions">
+            <div class="products-header">
+                <div>
+                    <span class="subtitle">Анонс сезона</span>
+                    <h2>Продажа образцов</h2>
+                </div>
+                <a href="#">Просмотреть все образцы</a>
+            </div>
+
+            <div class="cards">
+
+            </div>
+        </section>
+    </div>
+        </section>
+    </div>
+    <script src="./cards.js"></script>
+</body>
+
+</html>

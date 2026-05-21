@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Greenhouse Community</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+
+  <aside class="sidebar">
+
+    <div>
+
+      <div class="logo">
+        <h1>Greenhouse</h1>
+        <p>CURATED GROWTH</p>
+      </div>
+
+      <div class="menu">
+
+        <div class="menu-item active">
+          <span>🌿</span>
+          Подборки
+        </div>
+
+        <div class="menu-item">
+          <span>🪴</span>
+          Домашние растения
+        </div>
+
+        <div class="menu-item">
+          <span>🧴</span>
+          Средства для ухода
+        </div>
+
+        <div class="menu-item">
+          <span>🌸</span>
+          Семинары
+        </div>
+
+        <div class="menu-item">
+          <span>📖</span>
+          Личный журнал
+        </div>
+
+      </div>
+
+    </div>
+
+    <div>
+
+      <button class="catalog-btn">
+        Смотреть Каталог
+      </button>
+
+      <div class="bottom-links">
+        <div>🌱 Устойчивое развитие</div>
+        <div>❔ Поддержка</div>
+      </div>
+
+    </div>
+
+  </aside>
+
+  <!-- MAIN -->
+
+  <main class="main">
+
+    <input class="search" type="text" placeholder="Поиск по комьюнити..." />
+
+    <section class="hero">
+
+      <div class="overlay">
+        <h2>Добро пожаловать в комьюнити</h2>
+
+        <p>
+          Делитесь редкими растениями, находите друзей,
+          участвуйте в обсуждениях и вдохновляйтесь
+          зелёным пространством вместе с другими участниками.
+        </p>
+
+        <button>Начать общение</button>
+      </div>
+
+    </section>
+
+    <section class="cards">
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="card-content">
+          <h3>Обмен черенками</h3>
+          <p>Участники обмениваются редкими растениями и советами.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="card-content">
+          <h3>Уход за растениями</h3>
+          <p>Лучшие советы по освещению, поливу и пересадке.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1512428813834-c702c7702b78?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="card-content">
+          <h3>Семинары</h3>
+          <p>Еженедельные встречи и мастер-классы сообщества.</p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- FRIENDS -->
+
+    <section class="friends">
+
+      <div class="friends-top">
+        <h3>Друзья сообщества</h3>
+      </div>
+
+      <div class="avatars">
+
+        <div class="friend">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg">
+          <p>Мария</p>
+        </div>
+
+        <div class="friend">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg">
+          <p>Алекс</p>
+        </div>
+
+        <div class="friend">
+          <img src="https://randomuser.me/api/portraits/women/65.jpg">
+          <p>София</p>
+        </div>
+
+        <div class="friend">
+          <img src="https://randomuser.me/api/portraits/women/22.jpg">
+          <p>Елена</p>
+        </div>
+
+        <div class="friend">
+          <img src="https://randomuser.me/api/portraits/men/51.jpg">
+          <p>Игорь</p>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- CHAT -->
+
+  <section class="chat">
+
+    <div class="chat-header">
+      <div>
+        <h2>Чат Комьюнити</h2>
+        <div class="online">● 128 участников онлайн</div>
+      </div>
+    </div>
+
+    <div class="messages" id="messages">
+
+      <div class="message">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg">
+
+        <div class="bubble">
+          Всем привет 🌿
+          Кто-нибудь выращивает монстеру?
+        </div>
+      </div>
+
+      <div class="message self">
+        <div class="bubble">
+          Да! У меня дома уже 3 вида 💚
+        </div>
+      </div>
+
+      <div class="message">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg">
+
+        <div class="bubble">
+          Могу поделиться черенками на следующей неделе ✨
+        </div>
+      </div>
+
+    </div>
+
+    <div class="chat-input">
+      <input type="text" id="messageInput" placeholder="Напишите сообщение..." />
+      <button onclick="sendMessage()">➤</button>
+    </div>
+
+  </section>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

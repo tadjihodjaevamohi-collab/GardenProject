@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./exchange.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mynerve&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mynerve&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="vse">
+
+        <div class="sidebar">
+            <div class="logo">Greenhouse</div>
+    
+            <ul class="menu">
+                <li class="active" data-category="plants">
+                    <img src="./img/leaf-icon.png" alt="">Подборки
+                </li>
+                <li class="exchange-link">
+                    <img src="./img/location-icon.png" alt=""> Обмен растений
+                </li>
+                <li onclick="window.location.href='./cards.html'" style="cursor: pointer;">
+                    <img src="./img/head-icon.png" alt=""> ДОМАШНИЕ РАСТЕНИЯ
+                </li>
+                <li>
+                    <img src="./img/tools-icon.png" alt=""> СРЕДСТВА ДЛЯ УХОДА
+                </li>
+                <li>
+                    <img src="./img/flower-icon.png" alt=""> СЕМИНАРЫ
+                </li>
+                <li>
+                    <img src="./img/person-icon-consult.png" alt=""> консультации
+                </li>
+                <li>
+                    <img src="./img/money-icon.png" alt=""> спонсирование
+                </li>
+                <li onclick="window.location.href='../interior.html'" style="cursor: pointer;">
+                    <img src="./img/book-icon.png" alt=""> ЛИЧНЫЙ ЖУРНАЛ
+                </li>
+            </ul>
+            <div class="menu-2">
+                <button class="catalog-btn">Смотреть каталог</button>
+                <ul class="menu-2_ul">
+                    <li>
+                        <img src="./img/tree-icon.png" alt=""> УСТОЙЧИВОЕ РАЗВИТИЕ
+                    </li>
+                    <li>
+                        <img src="./img/mark-icon.png" alt=""> ПОДДЕРЖКА
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <main class="main">
+
+        <div class="right">
+
+            
+            <!-- TOP BAR -->
+            <div class="topbar">
+                <input type="text" placeholder="Поиск..." class="search">
+                
+                <div class="icons">
+                    <span><img src=".//img/bag-icon.png" alt=""></span>
+                    <span><img src="./img/person-icon.png" alt=""></span>
+                </div>
+            </div>
+            
+            <!-- HERO -->
+            <section class="hero">
+                <div class="hero-text">
+                    <h1>Обменивайте Ваши<br>Больные Растения<br>На Новые</h1>
+                    
+                    <div class="line"></div>
+                    
+                    <p>
+                        Не у всех есть время ухаживать за своими растениями
+                        если они заболеют, поэтому мы нашли решение! Вы можете
+                        обменять его на новое, чтобы мы могли позаботиться о них.
+                        Эта возможность выгодна для всех, потому что людям нужна
+                        помощь с растениями, а нам нужны потенциальные клиенты
+                        для новых покупок!
+                    </p>
+                </div>
+                
+                <div class="hero-image">
+                    <img src="./img/Снимок экрана 2026-05-18 141602.png">
+                </div>
+            </section>
+            
+            <!-- BRANCHES -->
+            <section class="branches">
+                <h2>Наши филиалы</h2>
+                
+                <div class="cards">
+                    
+                    <div class="card">
+                        <div class="icon"><img src="./img/" alt=""></div>
+                        <h3>Филиал "Центр"</h3>
+                        <p>ул. Амира Темура, 108<br>Ташкент, 100084</p>
+                        <button>Посмотреть на карте →</button>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="icon">🌿</div>
+                        <h3>Филиал "Чилэнзар"</h3>
+                        <p>ул. Узбекская, 45<br>Ташкент, 100115</p>
+                        <button>Посмотреть на карте →</button>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="icon">🌿</div>
+                        <h3>Филиал "Мирзо Улугбек"</h3>
+                        <p>пр. Навои, 56<br>Ташкент, 100011</p>
+                        <button>Посмотреть на карте →</button>
+                    </div>
+                    
+                    <div class="card highlight">
+                        <h3>Список филиалов постоянно расширяется!</h3>
+                        <p>Следите за обновлениями →</p>
+                    </div>
+                    
+                </div>
+            </section>
+            
+            <!-- STEPS -->
+            <section class="steps">
+                <h2>Как это работает?</h2>
+                
+                <div class="steps-row">
+                    
+                    <div class="step">
+                        <span>1</span>
+                        <h4>Принесите растение</h4>
+                        <p>Принесите к нам больное растение</p>
+                    </div>
+                    
+                    <div class="arrow">→</div>
+                    
+                    <div class="step">
+                        <span>2</span>
+                        <h4>Мы его осмотрим</h4>
+                        <p>Оценим состояние растения</p>
+                    </div>
+    
+                    <div class="arrow">→</div>
+                    
+                    <div class="step">
+                        <span>3</span>
+                        <h4>Обмен на новое</h4>
+                        <p>Выберите новое растение</p>
+                    </div>
+                    
+                    <div class="arrow">→</div>
+                    
+                    <div class="step">
+                        <span>4</span>
+                        <h4>Мы заботимся</h4>
+                        <p>Дадим вторую жизнь</p>
+                    </div>
+                    
+                </div>
+            </section>
+            
+        </main>
+    </div>
+    </div>
+    <script>
+        const firstMenuLink = document.querySelector('ul.menu li:first-child')
+        if (firstMenuLink) {
+            firstMenuLink.style.cursor = 'pointer'
+            firstMenuLink.addEventListener('click', () => {
+                window.location.href = '../../index.html'
+            })
+        }
+
+        const avatarIcon = document.querySelector('.icons span:last-child')
+        if (avatarIcon) {
+            avatarIcon.style.cursor = 'pointer'
+            avatarIcon.addEventListener('click', () => {
+                const userString = localStorage.getItem('user')
+                if (userString) {
+                    window.location.href = '../../profile.html'
+                } else {
+                    window.location.href = '../../enter.html'
+                }
+            })
+        }
+
+        document.querySelectorAll('.card button').forEach(button => {
+            button.addEventListener('click', () => {
+                window.location.href = './map.html'
+            })
+        })
+    </script>
+</body>
+
+</html>
