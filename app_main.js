@@ -57,19 +57,33 @@ if (profileImage) {
   })
 }
 
-const exchangeLink = document.querySelector('li.exchange-link')
-if (exchangeLink) {
-  exchangeLink.style.cursor = 'pointer'
-  exchangeLink.addEventListener('click', () => {
-    window.location.href = './data/side-bar/exchange.html'
-  })
+// Map sidebar elements with standard relative paths
+const navigationMappings = {
+  '.collections-link': './side-bar/collections.html',
+  '.exchange-link': './side-bar/exchange.html',
+  '.cards-link': './side-bar/cards.html',
+  '.care-link': './side-bar//examples.html',
+  '.seminars-link': './side-bar/community.html',
+  '.consultations-link': './side-bar/community.html',
+  '.sponsorship-link': './side-bar/sponsorship.html',
+  '.journal-link': './interior.html'
 }
 
-const cardsLink = document.querySelector('li.cards-link')
-if (cardsLink) {
-  cardsLink.style.cursor = 'pointer'
-  cardsLink.addEventListener('click', () => {
-    window.location.href = './data/side-bar/cards.html'
+Object.entries(navigationMappings).forEach(([selector, url]) => {
+  const element = document.querySelector(selector)
+  if (element) {
+    element.style.cursor = 'pointer'
+    element.addEventListener('click', () => {
+      window.location.href = url
+    })
+  }
+})
+
+// Catalog Button
+const catalogBtn = document.querySelector('.catalog-btn')
+if (catalogBtn) {
+  catalogBtn.addEventListener('click', () => {
+    window.location.href = './side-bar/cards.html'
   })
 }
 

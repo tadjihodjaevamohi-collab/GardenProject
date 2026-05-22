@@ -1,6 +1,8 @@
 let cardContainer = document.querySelector('.cards')
 let currentCategory = 'plants' // Default category
-let products = []
+let products = [
+
+]
 
 // Load products from JSON file based on category
 async function loadProducts(category) {
@@ -46,9 +48,6 @@ function renderCategories(arr) {
   attachEventListeners()
 }
 
-// Load initial products
-loadProducts(currentCategory)
-
 function attachEventListeners() {
   const productCards = cardContainer.querySelectorAll(".products");
 
@@ -79,6 +78,57 @@ function attachEventListeners() {
   });
 }
 
+// Set up profile button redirection
+const profileImage = document.querySelector('img.profile')
+if (profileImage) {
+  profileImage.style.cursor = 'pointer'
+  profileImage.addEventListener('click', () => {
+    const userInfo = localStorage.getItem('user')
+    if (userInfo) {
+      window.location.href = '../profile.html'
+    } else {
+      window.location.href = '../enter.html'
+    }
+  })
+}
+
+// Subfolder Unified Navigation Mappings
+const subFolderNavigation = {
+  '.collections-link': './collections.html',
+  '.exchange-link': './exchange.html',
+  '.cards-link': './cards.html',
+  '.care-link': './examples.html',
+  '.seminars-link': './community.html',
+  '.consultations-link': './community.html',
+  '.sponsorship-link': './sponsorship.html',
+  '.journal-link': './interior.html'
+}
+
+Object.entries(subFolderNavigation).forEach(([selector, url]) => {
+  const element = document.querySelector(selector)
+  if (element) {
+    element.style.cursor = 'pointer'
+    element.addEventListener('click', () => {
+      window.location.href = url
+    })
+  }
+})
+
+// Catalog Button
+const catalogBtn = document.querySelector('.catalog-btn')
+if (catalogBtn) {
+  catalogBtn.addEventListener('click', () => {
+    window.location.href = './cards.html'
+  })
+}
+
+// Load initial products based on URL search query or default category
+const urlParams = new URLSearchParams(window.location.search);
+const initialCat = urlParams.get('category') || 'plants';
+
+// Update active menu item and load initial category
+switchCategory(initialCat);
+
 // Add function to switch categories
 function switchCategory(category) {
   currentCategory = category
@@ -93,7 +143,7 @@ function switchCategory(category) {
   })
 }
 
-// Add click listeners to menu items
+// Add click listeners to category switching menu items
 document.querySelectorAll('.menu li[data-category]').forEach(item => {
   item.addEventListener('click', () => {
     switchCategory(item.dataset.category)

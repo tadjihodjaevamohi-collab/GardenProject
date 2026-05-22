@@ -42,3 +42,33 @@ donateForm.addEventListener('submit', function(e){
   modal.classList.remove('active');
 
 });
+
+// Subfolder Unified Navigation Mappings
+const subFolderNavigation = {
+  '.collections-link': './collections.html',
+  '.exchange-link': './exchange.html',
+  '.cards-link': './cards.html',
+  '.care-link': './examples.html',
+  '.seminars-link': './community.html',
+  '.consultations-link': './community.html',
+  '.sponsorship-link': './sponsorship.html',
+  '.journal-link': '../interior.html'
+}
+
+Object.entries(subFolderNavigation).forEach(([selector, url]) => {
+  const element = document.querySelector(selector)
+  if (element) {
+    element.style.cursor = 'pointer'
+    element.addEventListener('click', () => {
+      window.location.href = url
+    })
+  }
+})
+
+// Catalog Button
+const catalogBtn = document.querySelector('.catalog-btn')
+if (catalogBtn) {
+  catalogBtn.addEventListener('click', () => {
+    window.location.href = './cards.html'
+  })
+}

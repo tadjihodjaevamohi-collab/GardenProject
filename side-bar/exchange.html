@@ -25,28 +25,28 @@
             <div class="logo">Greenhouse</div>
     
             <ul class="menu">
-                <li class="active" data-category="plants">
+                <li class="collections-link" data-category="plants">
                     <img src="./img/leaf-icon.png" alt="">Подборки
                 </li>
                 <li class="exchange-link">
                     <img src="./img/location-icon.png" alt=""> Обмен растений
                 </li>
-                <li onclick="window.location.href='./cards.html'" style="cursor: pointer;">
+                <li class="cards-link">
                     <img src="./img/head-icon.png" alt=""> ДОМАШНИЕ РАСТЕНИЯ
                 </li>
-                <li>
+                <li class="care-link">
                     <img src="./img/tools-icon.png" alt=""> СРЕДСТВА ДЛЯ УХОДА
                 </li>
-                <li>
+                <li class="seminars-link">
                     <img src="./img/flower-icon.png" alt=""> СЕМИНАРЫ
                 </li>
-                <li>
+                <li class="consultations-link">
                     <img src="./img/person-icon-consult.png" alt=""> консультации
                 </li>
-                <li>
+                <li class="sponsorship-link">
                     <img src="./img/money-icon.png" alt=""> спонсирование
                 </li>
-                <li onclick="window.location.href='../interior.html'" style="cursor: pointer;">
+                <li class="journal-link">
                     <img src="./img/book-icon.png" alt=""> ЛИЧНЫЙ ЖУРНАЛ
                 </li>
             </ul>
@@ -72,7 +72,7 @@
                 <input type="text" placeholder="Поиск..." class="search">
                 
                 <div class="icons">
-                    <span><img src=".//img/bag-icon.png" alt=""></span>
+                    <span><img src="./img/bag-icon.png" alt=""></span>
                     <span><img src="./img/person-icon.png" alt=""></span>
                 </div>
             </div>
@@ -85,12 +85,12 @@
                     <div class="line"></div>
                     
                     <p>
-                        Не у всех есть время ухаживать за своими растениями
-                        если они заболеют, поэтому мы нашли решение! Вы можете
-                        обменять его на новое, чтобы мы могли позаботиться о них.
-                        Эта возможность выгодна для всех, потому что людям нужна
-                        помощь с растениями, а нам нужны потенциальные клиенты
-                        для новых покупок!
+                         Не у всех есть время ухаживать за своими растениями
+                         если они заболеют, поэтому мы нашли решение! Вы можете
+                         обменять его на новое, чтобы мы могли позаботиться о них.
+                         Эта возможность выгодна для всех, потому что людям нужна
+                         помощь с растениями, а нам нужны потенциальные клиенты
+                         для новых покупок!
                     </p>
                 </div>
                 
@@ -106,7 +106,7 @@
                 <div class="cards">
                     
                     <div class="card">
-                        <div class="icon"><img src="./img/" alt=""></div>
+                        <div class="icon">🌿</div>
                         <h3>Филиал "Центр"</h3>
                         <p>ул. Амира Темура, 108<br>Ташкент, 100084</p>
                         <button>Посмотреть на карте →</button>
@@ -177,23 +177,15 @@
     </div>
     </div>
     <script>
-        const firstMenuLink = document.querySelector('ul.menu li:first-child')
-        if (firstMenuLink) {
-            firstMenuLink.style.cursor = 'pointer'
-            firstMenuLink.addEventListener('click', () => {
-                window.location.href = '../../index.html'
-            })
-        }
-
         const avatarIcon = document.querySelector('.icons span:last-child')
         if (avatarIcon) {
             avatarIcon.style.cursor = 'pointer'
             avatarIcon.addEventListener('click', () => {
                 const userString = localStorage.getItem('user')
                 if (userString) {
-                    window.location.href = '../../profile.html'
+                    window.location.href = '../profile.html'
                 } else {
-                    window.location.href = '../../enter.html'
+                    window.location.href = '../enter.html'
                 }
             })
         }
@@ -203,6 +195,36 @@
                 window.location.href = './map.html'
             })
         })
+
+        // Subfolder Unified Navigation Mappings
+        const subFolderNavigation = {
+            '.collections-link': './collections.html',
+            '.exchange-link': './exchange.html',
+            '.cards-link': './cards.html',
+            '.care-link': './cards.html?category=accessories',
+            '.seminars-link': './community.html',
+            '.consultations-link': './community.html',
+            '.sponsorship-link': './sponsorship.html',
+            '.journal-link': '../interior.html'
+        }
+
+        Object.entries(subFolderNavigation).forEach(([selector, url]) => {
+            const element = document.querySelector(selector)
+            if (element) {
+                element.style.cursor = 'pointer'
+                element.addEventListener('click', () => {
+                    window.location.href = url
+                })
+            }
+        })
+
+        // Catalog Button
+        const catalogBtn = document.querySelector('.catalog-btn')
+        if (catalogBtn) {
+            catalogBtn.addEventListener('click', () => {
+                window.location.href = './cards.html'
+            })
+        }
     </script>
 </body>
 

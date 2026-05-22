@@ -170,11 +170,33 @@ if (viewInteriorButton) {
   })
 }
 
-const indexLink = document.querySelector('li.index-link')
-if (indexLink) {
-  indexLink.style.cursor = 'pointer'
-  indexLink.addEventListener('click', () => {
-    window.location.href = './index.html'
+// Unified Navigation for Profile Page
+const navigationMappings = {
+  '.collections-link': './side-bar/collections.html',
+  '.exchange-link': './side-bar/exchange.html',
+  '.cards-link': './side-bar/cards.html',
+  '.care-link': './side-bar/cards.html?category=accessories',
+  '.seminars-link': './side-bar/community.html',
+  '.consultations-link': './side-bar/community.html',
+  '.sponsorship-link': './side-bar/sponsorship.html',
+  '.journal-link': './interior.html'
+}
+
+Object.entries(navigationMappings).forEach(([selector, url]) => {
+  const element = document.querySelector(selector)
+  if (element) {
+    element.style.cursor = 'pointer'
+    element.addEventListener('click', () => {
+      window.location.href = url
+    })
+  }
+})
+
+// Catalog Button
+const catalogBtn = document.querySelector('.catalog-btn')
+if (catalogBtn) {
+  catalogBtn.addEventListener('click', () => {
+    window.location.href = './side-bar/cards.html'
   })
 }
 

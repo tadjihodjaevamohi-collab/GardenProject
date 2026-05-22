@@ -3,41 +3,37 @@
   {
     "productId": 1,
     "productImage": "./img/product1.png",
-    "productName": "Monstera Deliciosa",
-    "productInfo": "XL ARCHITECTURAL SPECIMEN",
-    "productPrice": "$68.00",
-    "productDiscount": "$80.00",
-    "productAmount": "1",
-    "productCart": "Add to Cart"
+    "productName": "Artisan Pottery",
+    "productInfo": "Handmade ceramics"
   },
   {
     "productId": 2,
     "productImage": "./img/product2.png",
-    "productName": "Sansevieria Laurentii",
-    "productInfo": "HARDY STRUCTURAL ELEMENT",
-    "productPrice": "$42.00",
-    "productDiscount": "",
-    "productAmount": "1",
-    "productCart": "Add to Cart"
+    "productName": "Organic Feed",
+    "productInfo": "Healthy plants"
   },
   {
     "productId": 3,
     "productImage": "./img/product3.png",
-    "productName": "Ficus Lyrata",
-    "productInfo": "LUXURY TREE STATEMENT",
-    "productPrice": "$115.00",
-    "productDiscount": "$140.00",
-    "productAmount": "1",
-    "productCart": "Add to Cart"
+    "productName": "Garden Tools",
+    "productInfo": "Precision tools"
   },
   {
     "productId": 4,
     "productImage": "./img/product4.png",
-    "productName": "Olea Europaea",
-    "productInfo": "ANCIENT MEDITERRANEAN GRACE",
-    "productPrice": "$95.00",
-    "productDiscount": "",
-    "productAmount": "1",
-    "productCart": "Add to Cart"
+    "productName": "Peat Trays",
+    "productInfo": "A 16-cell biodegradable module tray."
+  },
+  {
+    "productId": 5,
+    "productImage": "./img/product4.png",
+    "productName": "Indoor Plant Shelfs",
+    "productInfo": "Practical for holding small pots securely."
+  },
+  {
+    "productId": 6,
+    "productImage": "./img/product4.png",
+    "productName": "Plant Sprayers",
+    "productInfo": "Professional tools for the watering your plants."
   }
 ]

@@ -1,23 +1,186 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Mynerve&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-        rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Mynerve&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-        rel="stylesheet">
-</head>
-<body>
+    <title>Коллекции - Greenhouse</title>
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Mynerve&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./collections.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <div class="logo">Greenhouse</div>
+
+            <ul class="menu">
+                <li class="collections-link active" data-category="plants">
+                    <img src="./img/leaf-icon.png" alt="">Подборки
+                </li>
+                <li class="exchange-link">
+                    <img src="./img/location-icon.png" alt=""> Обмен растений
+                </li>
+                <li class="cards-link">
+                    <img src="./img/head-icon.png" alt=""> ДОМАШНИЕ РАСТЕНИЯ
+                </li>
+                <li class="care-link">
+                    <img src="./img/tools-icon.png" alt=""> СРЕДСТВА ДЛЯ УХОДА
+                </li>
+                <li class="seminars-link">
+                    <img src="./img/flower-icon.png" alt=""> СЕМИНАРЫ
+                </li>
+                <li class="consultations-link">
+                    <img src="./img/person-icon-consult.png" alt=""> консультации
+                </li>
+                <li class="sponsorship-link">
+                    <img src="./img/money-icon.png" alt=""> спонсирование
+                </li>
+                <li class="journal-link">
+                    <img src="./img/book-icon.png" alt=""> ЛИЧНЫЙ ЖУРНАЛ
+                </li>
+            </ul>
+            <div class="menu-2">
+                <button class="catalog-btn">Смотреть каталог</button>
+                <ul class="menu-2_ul">
+                    <li>
+                        <img src="./img/tree-icon.png" alt=""> УСТОЙЧИВОЕ РАЗВИТИЕ
+                    </li>
+                    <li>
+                        <img src="./img/mark-icon.png" alt=""> ПОДДЕРЖКА
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- RIGHT SIDE CONTENT -->
+        <div class="right">
+            <!-- TOP NAVIGATION -->
+            <nav>
+                <ul>
+                    <li>
+                        <div class="nav-ul__search">
+                            <img src="./img/search-icon.png" alt="">
+                            <input type="text" placeholder="Поиск коллекций...">
+                        </div>
+                    </li>
+                    <li>
+                        <h3 class="title">Customize Your Garden</h3>
+                    </li>
+                    <li>
+                        <div class="nav-ul__icons">
+                            <img src="./img/bag-icon.png" alt="" style="cursor: pointer;">
+                            <img class="profile" src="./img/person-icon.png" alt="" style="cursor: pointer;">
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- MAIN SECTION -->
+            <main class="collections-section">
+                <header class="collections-header">
+                    <span class="subtitle">Кураторский выбор</span>
+                    <h2>Зеленые коллекции</h2>
+                    <p class="description">Экспонаты, отобранные нашими ботаниками за их структурную красоту, простоту адаптации и эстетическую гармонию в современном интерьере.</p>
+                </header>
+
+                <!-- COLLECTIONS GRID -->
+                <div class="collections-grid">
+                    <!-- CARD 1 -->
+                    <div class="collection-card">
+                        <div class="card-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1545241047-6083a3684587?q=80&w=1200&auto=format&fit=crop" alt="Тропический рай">
+                            <span class="difficulty-badge easy">Легкий уход</span>
+                        </div>
+                        <div class="card-info">
+                            <span class="item-count">12 видов растений</span>
+                            <h3>Тропический оазис</h3>
+                            <p>Роскошное обилие зелени для комнат с рассеянным светом. Крупные резные листья монстер, раписов и фикусов перенесут атмосферу джунглей в ваш дом.</p>
+                            <button class="view-coll-btn" onclick="window.location.href='./cards.html'">Смотреть растения →</button>
+                        </div>
+                    </div>
+
+                    <!-- CARD 2 -->
+                    <div class="collection-card">
+                        <div class="card-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1200&auto=format&fit=crop" alt="Стойкие суккуленты">
+                            <span class="difficulty-badge minimal">Минимум полива</span>
+                        </div>
+                        <div class="card-info">
+                            <span class="item-count">8 видов растений</span>
+                            <h3>Пустынная геометрия</h3>
+                            <p>Минималистичные силуэты суккулентов, эчеверий и редких кактусов. Идеальное решение для солнечных подоконников и занятых энтузиастов.</p>
+                            <button class="view-coll-btn" onclick="window.location.href='./cards.html'">Смотреть растения →</button>
+                        </div>
+                    </div>
+
+                    <!-- CARD 3 -->
+                    <div class="collection-card">
+                        <div class="card-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1512428813834-c702c7702b78?q=80&w=1200&auto=format&fit=crop" alt="Цветущие растения">
+                            <span class="difficulty-badge medium">Средняя сложность</span>
+                        </div>
+                        <div class="card-info">
+                            <span class="item-count">6 видов растений</span>
+                            <h3>Цветущая гармония</h3>
+                            <p>Нежные яркие соцветия спатифиллумов, орхидей и антуриумов. Эти растения не только украсят интерьер цветением, но и эффективно очистят воздух.</p>
+                            <button class="view-coll-btn" onclick="window.location.href='./cards.html'">Смотреть растения →</button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- SCRIPT FOR ROUTING -->
+    <script>
+        const avatarIcon = document.querySelector('img.profile')
+        if (avatarIcon) {
+            avatarIcon.style.cursor = 'pointer'
+            avatarIcon.addEventListener('click', () => {
+                const userString = localStorage.getItem('user')
+                if (userString) {
+                    window.location.href = '../profile.html'
+                } else {
+                    window.location.href = '../enter.html'
+                }
+            })
+        }
+
+        // Subfolder Unified Navigation Mappings
+        const subFolderNavigation = {
+            '.collections-link': './collections.html',
+            '.exchange-link': './exchange.html',
+            '.cards-link': './cards.html',
+            '.care-link': './cards.html?category=accessories',
+            '.seminars-link': './community.html',
+            '.consultations-link': './community.html',
+            '.sponsorship-link': './sponsorship.html',
+            '.journal-link': '../interior.html'
+        }
+
+        Object.entries(subFolderNavigation).forEach(([selector, url]) => {
+            const element = document.querySelector(selector)
+            if (element) {
+                element.style.cursor = 'pointer'
+                element.addEventListener('click', () => {
+                    window.location.href = url
+                })
+            }
+        })
+
+        // Catalog Button
+        const catalogBtn = document.querySelector('.catalog-btn')
+        if (catalogBtn) {
+            catalogBtn.addEventListener('click', () => {
+                window.location.href = './cards.html'
+            })
+        }
+    </script>
 </body>
+
 </html>
